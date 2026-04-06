@@ -1,4 +1,26 @@
-<div class="welcome-container">
+<!--  <div class="welcome-container">
   <h1>¡Bienvenido!</h1>
   <p>Has iniciado sesión correctamente.</p>
+</div> -->
+<div class="home-container">
+  <!-- 
+     Si 'user' existe, muestra el saludo y los detalles.
+  -->
+  @if (user) {
+    <h2>Bienvenido/a, {{ user.username }}!</h2>
+    <p>Has iniciado sesión correctamente.</p>
+    
+    <div>
+      <h3>Detalles del Perfil:</h3>
+      <ul>
+        <li>ID de Usuario: {{ user.id }}</li>
+        <li>Nombre de Usuario: {{ user.username }}</li>
+        <li>Email: {{ user.email }}</li>
+      </ul>
+    </div>
+  } @else {
+    <!-- Si 'user' es null, muestra el mensaje de carga. -->
+    <p>Cargando datos de usuario...</p>
+    <!-- Si no se encuentran datos, el usuario no debería estar aquí. -->
+  }
 </div>

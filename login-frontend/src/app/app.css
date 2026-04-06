@@ -1,0 +1,95 @@
+/* Estructura principal */
+html, body {
+    background-color: #cbdad5;
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    min-height: 100vh;
+}
+
+h1, h2, h3 {
+    font-family: 'Montserrat', sans-serif;
+}
+/*.contenido-principal {
+    flex: 1;
+    padding-top: 60px; 
+    padding-bottom: 60px; 
+    width: 100%;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}*/
+
+/* Navbar */
+nav{
+    background-color: #566981;
+}
+.nav-logo img{
+    width: 40px;
+}
+
+nav ul li{
+    padding: 10px;
+}
+.nav-link{
+    color: #cbdad5;
+    font-size: 18px;
+}
+
+.nav-link:hover{
+    color: #3a415a
+}
+
+/* Footer */
+footer{
+    background-color: #566981;
+    color: #cbdad5;
+}
+footer a{
+    color: #cbdad5;
+    text-decoration: none;
+}
+footer a:hover{
+    text-decoration: underline;
+}
+
+/* Formularios */
+.formulario{
+    color: #cbdad5;
+    padding: 20px;
+    text-align: center;
+}
+.formulario img{
+    width: 15em;
+    height: auto;
+    margin-bottom: auto;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+.formulario a{
+    color: #cbdad5;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: bold;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: #566981;
+    transition: background-color 0.3s ease;
+}
+.formulario a:hover{
+    background-color: #cbdad5;
+    color: #566981;
+}
+.formulario input[type="email"],
+.formulario input[type="text"],
+.formulario input[type="password"]{
+    padding: 10px;
+    margin: 5px 0;
+    border: none;
+    border-radius: 5px;
+    background-color: #566981;
+    color: #cbdad5;
+}

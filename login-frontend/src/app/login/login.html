@@ -1,14 +1,40 @@
-<div class="login-container">
+
+
+<div class="login-container" >
   <h2>Login</h2>
+  @if (loginError) {
+  <div style="color: red; margin-bottom: 15px;">
+    {{ loginError }}
+  </div>
+}
+
   <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
     <div>
       <label for="username">Username:</label>
       <input type="text" id="username" formControlName="username" required>
     </div>
+    
+    @if (loginForm.get('username')?.hasError('required') && (loginForm.get('username')?.dirty || loginForm.get('username')?.touched)) {
+        <div style="color: #ff2600; font-size: 0.9em;">
+          El nombre de usuario es obligatorio.
+        </div>
+    }
+
     <div>
       <label for="password">Password:</label>
       <input type="password" id="password" formControlName="password" required>
     </div>
+
+   @if (loginForm.get('password')?.errors && (loginForm.get('password')?.dirty || loginForm.get('password')?.touched)) {
+        <div style="color: #ff2600; font-size: 0.9em;">
+          @if (loginForm.get('password')?.errors?.['required']) {
+            <p>La contraseña es obligatoria.</p>
+          }
+          @if (loginForm.get('password')?.errors?.['minLength']) {
+            <p>La contraseña debe tener al menos 8 caracteres.</p>
+          }
+        </div>
+    }
     <button type="submit" [disabled]="!loginForm.valid">Login</button>
   </form>
 </div>
